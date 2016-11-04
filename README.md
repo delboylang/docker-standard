@@ -25,4 +25,8 @@ MySql is available on localhost:81
 
 the credentials are in the docker-compose file. 
 
+if you want to get on the web machine use
+
+docker exec -it {thecontainername} bash 
+
 Do not edit the docker file or docker compose file.
