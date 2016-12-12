@@ -1,7 +1,7 @@
 FROM php:5.6-apache
 
 RUN    apt-get update \
-&& apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libmcrypt-dev libpng12-dev libtidy-dev zziplib-bin msmtp \
+&& apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libmcrypt-dev libpng12-dev libtidy-dev zziplib-bin msmtp  nodejs npm\
 && a2enmod rewrite \
 && a2enmod ssl \
 && docker-php-ext-install mysqli pdo_mysql iconv mcrypt zip \
@@ -17,6 +17,6 @@ RUN a2enmod rewrite
 
 RUN curl -sS https://getcomposer.org/installer | php \
     && mv composer.phar /usr/bin/composer 
-RUN composer global require "laravel/installer" 
-RUN echo  "export PATH=$PATH:$HOME/bin:$HOME/.composer/vendor/bin" >> /root/.bashrc
-WORKDIR /var/www/silverstripe
+
+ 
+RUN ln -s /usr/bin/nodejs /usr/bin/node

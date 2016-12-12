@@ -6,6 +6,8 @@ web:
     - ./public:/var/www/silverstripe
   ports:
     - "8080:80"
+    - "3001:3001"
+    - "3000:3000"
 db:
   image: tutum/mysql
   environment:
